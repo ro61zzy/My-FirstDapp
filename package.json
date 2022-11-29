@@ -1,0 +1,22 @@
+{
+  "name": "my-firstdapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ro61zzy/My-FirstDapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ro61zzy/My-FirstDapp/issues"
+  },
+  "homepage": "https://github.com/ro61zzy/My-FirstDapp#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
