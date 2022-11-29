@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
+<html lang="en">
+     <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+      <title>DApp</title>
       <style>
         body {
           text-align: center;
@@ -38,40 +37,42 @@
     
       <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
       <script>
+        //window.ethereum.enable()
         const provider = new ethers.providers.Web3Provider(
+            //web3.currentProvider,
           window.ethereum,
-          "ropsten"
+          "goerli"
         );
     
-        const MoodContractAddress = "0x17E3cc2cf5c2b8f063d7b2de8Fa53ABde884Ff77";
+        const MoodContractAddress = "0x9653dad800928eaB0D3Ac089850c373050F334A6";
         const MoodContractABI = [
-          {
-            "inputs": [
-              {
-                "internalType": "string",
-                "name": "_mood",
-                "type": "string"
-              }
-            ],
-            "name": "setMood",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-          },
-          {
-            "inputs": [],
-            "name": "getMood",
-            "outputs": [
-              {
-                "internalType": "string",
-                "name": "",
-                "type": "string"
-              }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-          }
-        ];
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_mood",
+				"type": "string"
+			}
+		],
+		"name": "setMood",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMood",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
     
         let MoodContract;
         let signer;
@@ -84,7 +85,7 @@
               MoodContractABI,
               signer
             );
-          });
+          }); 
         });
     
         async function getMood() {
